@@ -10,11 +10,11 @@ import java.util.Random;
  * @author VinhHQHE194318
  */
 public class BubbleSort {
-    private int arr[];
+    private static int arr[];
     /**
      * Method bubblesort process algorithm bubblesort to sort by increasing order.
      */
-    public void bubblesort(){
+    public static void bubblesort(){
         int temp;
         //Loop 1: Interate through the each element.
         for (int i = 0; i < arr.length; i++) {
@@ -32,7 +32,7 @@ public class BubbleSort {
      * Method generateRandomNumber to random each elements in array.
      * @param size 
      */
-    public void generateRandomNumber(int size){
+    public static void generateRandomNumber(int size){
         arr = new int [size];
           Random rd = new Random();
         for (int i = 0; i < arr.length; i++) {
@@ -43,7 +43,7 @@ public class BubbleSort {
     /**
      * Method to display array.
      */
-    public void display(){
+    public static void display(){
         System.out.print("[");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
