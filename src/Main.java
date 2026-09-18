@@ -1,13 +1,13 @@
-
 /**
  * Class Main in role controller to run program.
+ * 
  * Version 16/9/2026
- *
  * @author VinhHQHE194318
  */
 public class Main {
 
     public static void main(String[] args) {
+        
         //init object of class
         BubbleSort bubble = new BubbleSort();
         Unitity unitity = new Unitity();

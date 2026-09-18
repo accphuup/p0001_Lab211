@@ -9,7 +9,6 @@ import java.util.Random;
  * @author VinhHQHE194318
  */
 public class BubbleSort {
-
     private static int arrayOfElements[];
 
     /**
@@ -35,6 +34,7 @@ public class BubbleSort {
 
         //Loop 1: iterate all elements in array. 
         for (int i = 0; i < arrayOfElements.length; i++) {
+            
                 //Loop 2: Each element pass will comparing and move biggest number to the end.
             for (int j = 0; j < arrayOfElements.length - 1 - i; j++) {
                 if (arrayOfElements[j] > arrayOfElements[j + 1]) {

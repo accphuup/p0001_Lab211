@@ -1,9 +1,9 @@
-
 import java.util.Scanner;
 
 /**
- * Class Unitity in role validate to check valid input users. Version 16/9/2026
- *
+ * Class Unitity in role validate to check valid input users.
+ * 
+ * Version 16/9/2026
  * @author VinhHQHE194318
  */
 public class Unitity {
