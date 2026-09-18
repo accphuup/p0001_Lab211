@@ -45,7 +45,18 @@ public class BubbleSort {
             }
         }
     }
-
+    
+    /**
+     * Method processes the selection sort algorithm to sort the array in
+     * increasing order.
+     *
+     * The array is imaginarily divided into two parts: sorted part and
+     * unsorted part. At the beginning, sorted part is empty while unsorted
+     * part contains the whole array. At every step, the algorithm finds the
+     * minimum element in the unsorted part and swaps it with the first
+     * element of the unsorted part, so it becomes included into the sorted
+     * part. The algorithm stops when the unsorted part becomes empty.
+     */
      public static void selectionSort() {
         int minIndex;
         int temp;
@@ -69,6 +80,34 @@ public class BubbleSort {
             }
         }
     }
+     
+     /**
+ * Method inserts the element at the given index into its correct position
+ * within the sorted part of the array (arrayOfElements[0..index-1]).
+ *
+ * Starting from the given index, the method compares the element to insert
+ * with elements on its left. Elements greater than it are shifted one
+ * position to the right. The method stops shifting and inserts the element
+ * when it reaches an element that is less than or equal to it, or when it
+ * reaches the left boundary of the array.
+ *
+ * @param index the index of the first element in the unsorted part, whose
+ *              value will be inserted into the sorted part.
+ */
+public static void insert(int index) {
+    int valueToInsert = arrayOfElements[index];
+    int j = index - 1;
+
+    //Shift elements greater than valueToInsert one position to the right.
+    while (j >= 0 && arrayOfElements[j] > valueToInsert) {
+        arrayOfElements[j + 1] = arrayOfElements[j];
+        j--;
+    }
+
+    //Reached left boundary or found element <= valueToInsert: insert here.
+    arrayOfElements[j + 1] = valueToInsert;
+}
+
     /**
      * Method display array
      */
