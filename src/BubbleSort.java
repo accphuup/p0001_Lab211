@@ -46,6 +46,29 @@ public class BubbleSort {
         }
     }
 
+     public static void selectionSort() {
+        int minIndex;
+        int temp;
+ 
+        //Loop 1: mark the boundary between sorted part and unsorted part.
+        for (int i = 0; i < arrayOfElements.length - 1; i++) {
+            minIndex = i;
+ 
+            //Loop 2: find index of the minimum element in the unsorted part.
+            for (int j = i + 1; j < arrayOfElements.length; j++) {
+                if (arrayOfElements[j] < arrayOfElements[minIndex]) {
+                    minIndex = j;
+                }
+            }
+ 
+            //Swap the minimum element found with the first element of the unsorted part.
+            if (minIndex != i) {
+                temp = arrayOfElements[i];
+                arrayOfElements[i] = arrayOfElements[minIndex];
+                arrayOfElements[minIndex] = temp;
+            }
+        }
+    }
     /**
      * Method display array
      */
