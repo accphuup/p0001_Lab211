@@ -1,56 +1,62 @@
 
 import java.util.Random;
 
-
 /**
- * Class BubbleSort in role Service to process algorithm and generate random number of array.
+ * Class BubbleSort in role service to process algorithm and generate random
+ * number. 
  * 
- * Version 16/09/2026
- *
+ * Version 16/9/2026
  * @author VinhHQHE194318
  */
 public class BubbleSort {
-    private static int arr[];
+
+    private static int arrayOfElements[];
+
     /**
-     * Method bubblesort process algorithm bubblesort to sort by increasing order.
+     * Method generate random number in array with length of array is input
+     * users.
+     *
+     * @param size to stored length of array from input users.
      */
-    public static void bubblesort(){
+    public static void generateRandomNumber(int size) {
+        arrayOfElements = new int[size];
+        Random random = new Random();
+        for (int i = 0; i < arrayOfElements.length; i++) {
+            arrayOfElements[i] = random.nextInt(10);
+        }
+    }
+
+    /**
+     * Method bubblesort process algorithm bubblesort to sort by increasing
+     * order.
+     */
+    public static void bubbleSort() {
         int temp;
-        //Loop 1: Interate through the each element.
-        for (int i = 0; i < arr.length; i++) {
-            //Loop 2: Move all elements bigger to the end and swap all elements smaller to ahead. 
-            for (int j = 0; j < arr.length -1 -i; j++) {
-                if (arr[j] > arr[j+1]) {
-                    temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+
+        //Loop 1: iterate all elements in array. 
+        for (int i = 0; i < arrayOfElements.length; i++) {
+                //Loop 2: Each element pass will comparing and move biggest number to the end.
+            for (int j = 0; j < arrayOfElements.length - 1 - i; j++) {
+                if (arrayOfElements[j] > arrayOfElements[j + 1]) {
+                    temp = arrayOfElements[j];
+                    arrayOfElements[j] = arrayOfElements[j + 1];
+                    arrayOfElements[j + 1] = temp;
                 }
             }
         }
     }
+
     /**
-     * Method generateRandomNumber to random each elements in array.
-     * @param size 
+     * Method display array
      */
-    public static void generateRandomNumber(int size){
-        arr = new int [size];
-          Random rd = new Random();
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = rd.nextInt(10);
-        }
-    }
-    
-    /**
-     * Method to display array.
-     */
-    public static void display(){
+    public static void display() {
         System.out.print("[");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length -1) {
+        for (int i = 0; i < arrayOfElements.length; i++) {
+            System.out.print(arrayOfElements[i]);
+            if (i < arrayOfElements.length - 1) {
                 System.out.print(", ");
             }
-        }   
-        System.out.println("]");
+        }
+        System.out.print("]");
     }
 }
